@@ -6,7 +6,7 @@ Basic setup for quick prototyping
 
 ![Image Title](https://raw.githubusercontent.com/iondrimba/images/master/threejs-starter.gif)
 
-## [Demo](https://iondrimba.github.io/threejs-starter/public/)
+## [Demo](https://iondrimba.github.io/threejs-starter/public/index.html)
 
 ## Includes
 
