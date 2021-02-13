@@ -19,7 +19,7 @@
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^5.7.3"
   },
   "scripts": {
     "start": "node --trace-deprecation ./node_modules/.bin/webpack serve --config webpack.dev.js",
