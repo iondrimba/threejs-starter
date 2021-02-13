@@ -1,4 +1,4 @@
-# Threejs Starter
+# :flying_saucer: Threejs Starter
 
 Basic setup for quick prototyping
 
