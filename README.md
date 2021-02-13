@@ -10,7 +10,7 @@ Basic setup for quick prototyping
 
 ## Includes
 
-* Threejs mains entities via modules
+* Threejs main entities via modules
 * Camera controls (OrbitControls and TransformControls)
 * Basic lightning setup
 * Live reload
