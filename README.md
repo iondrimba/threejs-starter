@@ -2,7 +2,7 @@
 
 Basic setup for quick prototyping
 
-![Node.js CI](https://github.com/iondrimba/threejs-starter/workflows/Node.js%20CI/badge.svg)
+[![Node.js CI](https://github.com/iondrimba/threejs-starter/actions/workflows/node.yml/badge.svg)](https://github.com/iondrimba/threejs-starter/actions/workflows/node.yml)
 
 ![Image Title](https://raw.githubusercontent.com/iondrimba/images/master/threejs-starter.gif)
 
