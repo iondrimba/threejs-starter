@@ -74,7 +74,6 @@ class App {
     this.scene = new Scene();
     this.scene.background = new Color(this.colors.background);
     this.renderer = new WebGLRenderer({ antialias: true });
-    this.scene.add(this.meshes.container);
     this.renderer.setSize(this.width, this.height);
 
     this.renderer.shadowMap.enabled = true;
@@ -226,12 +225,9 @@ class App {
 
   animate() {
     this.stats.begin();
-
     this.orbitControl.update();
     this.renderer.render(this.scene, this.camera);
-
     this.stats.end();
-
 
     requestAnimationFrame(this.animate.bind(this));
   }
