@@ -1,7 +1,7 @@
 {
-  "name": "madcaps",
+  "name": "threejs-starter",
   "version": "1.0.0",
-  "description": "Playing with Matcaps and Threejs",
+  "description": "Playing with Threejs",
   "main": "./build/index.html",
   "source": "./src/app.js",
   "devDependencies": {
@@ -28,14 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iondrimba/madcaps.git"
+    "url": "git+https://github.com/iondrimba/threejs-starter.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iondrimba/madcaps/issues"
+    "url": "https://github.com/iondrimba/threejs-starter/issues"
   },
-  "homepage": "https://github.com/iondrimba/madcaps#readme",
+  "homepage": "https://github.com/iondrimba/threejs-starter#readme",
   "dependencies": {
     "gsap": "^3.6.0",
     "stats-js": "^1.0.1",
