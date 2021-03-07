@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "node --trace-deprecation ./node_modules/.bin/webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "serve": "npx serve public"
   },
   "repository": {
     "type": "git",
