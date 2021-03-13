@@ -2,6 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
+const { ESBuildPlugin } = require('esbuild-loader')
 
 module.exports = merge(common, {
   mode: 'development',
@@ -24,12 +25,15 @@ module.exports = merge(common, {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
+        loader: 'esbuild-loader',
+        options: {
+          target: 'es2017' // Syntax to compile to (see options below for possible values)
+        }
       },
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ESBuildPlugin(),
   ]
 });

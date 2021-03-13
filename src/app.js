@@ -135,7 +135,7 @@ class App {
     this.directionalLight.shadow.camera.needsUpdate = true;
     this.directionalLight.shadow.mapSize.width = 2048;
     this.directionalLight.shadow.mapSize.height = 2048;
-    this.directionalLight.position.set(0, 13, 23);
+    this.directionalLight.position.set(0, 13, 0);
     this.directionalLight.target = target;
 
     this.directionalLight.shadow.camera.far = 1000;
