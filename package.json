@@ -5,7 +5,7 @@
   "main": "./build/index.html",
   "source": "./src/app.js",
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.14.1",
     "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.6.1",
