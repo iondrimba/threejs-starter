@@ -9,13 +9,13 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   stats: 'errors-only',
   devServer: {
-    clientLogLevel: 'silent',
-    stats: 'errors-only',
-    open: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     port: 9000,
-    contentBase: path.resolve(__dirname, './public'),
-    contentBasePublicPath: '/',
-    hot: true,
+    open: true,
+    liveReload: true,
+    watchFiles: ['./src/index.html', './src/style.css', './src/app.js'],
   },
   module: {
     rules: [
