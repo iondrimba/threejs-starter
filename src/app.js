@@ -1,21 +1,5 @@
 import './style.css';
-import {
-  Scene,
-  Object3D,
-  Color,
-  WebGLRenderer,
-  PCFSoftShadowMap,
-  PerspectiveCamera,
-  AxesHelper,
-  AmbientLight,
-  DirectionalLight,
-  GridHelper,
-  PlaneBufferGeometry,
-  MeshStandardMaterial,
-  Mesh,
-  DoubleSide,
-  SphereBufferGeometry,
-} from 'three';
+import * as THREE from 'three';
 import Stats from 'stats-js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { TransformControls } from 'three/examples/jsm/controls/TransformControls.js';
@@ -23,6 +7,8 @@ import {
   radians,
   rgbToHex,
 } from './helpers';
+
+
 class App {
   init() {
     this.clearBody();
@@ -61,7 +47,7 @@ class App {
     };
 
     this.meshes = {
-      sphereMaterial: new MeshStandardMaterial({
+      sphereMaterial: new THREE.MeshStandardMaterial({
         color: this.colors.ball,
         metalness: .11,
         emissive: 0x0,
@@ -71,25 +57,25 @@ class App {
   }
 
   createScene() {
-    this.scene = new Scene();
-    this.scene.background = new Color(this.colors.background);
-    this.renderer = new WebGLRenderer({ antialias: true });
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(this.colors.background);
+    this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(this.width, this.height);
 
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = PCFSoftShadowMap;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     document.body.appendChild(this.renderer.domElement);
   }
 
   addAxisHelper() {
-    const axesHelper = new AxesHelper(5);
+    const axesHelper = new THREE.AxesHelper(5);
 
     this.debug && this.scene.add(axesHelper);
   }
 
   createCamera() {
-    this.camera = new PerspectiveCamera(20, this.width / this.height, 1, 1000);
+    this.camera = new THREE.PerspectiveCamera(20, this.width / this.height, 1, 1000);
     this.camera.position.set(0, 10, 50);
 
     this.scene.add(this.camera);
@@ -121,16 +107,16 @@ class App {
   }
 
   addAmbientLight() {
-    const light = new AmbientLight({ color: this.colors.ambientLight }, .5);
+    const light = new THREE.AmbientLight({ color: this.colors.ambientLight }, .5);
 
     this.scene.add(light);
   }
 
   addDirectionalLight() {
-    const target = new Object3D();
+    const target = new THREE.Object3D();
     target.position.set(0, 0, -40);
 
-    this.directionalLight = new DirectionalLight(this.colors.directionalLight, 1);
+    this.directionalLight = new THREE.DirectionalLight(this.colors.directionalLight, 1);
     this.directionalLight.castShadow = true;
     this.directionalLight.shadow.camera.needsUpdate = true;
     this.directionalLight.shadow.mapSize.width = 2048;
@@ -153,7 +139,7 @@ class App {
   addFloorGrid() {
     const size = 20;
     const divisions = 20;
-    this.grid = new GridHelper(size, divisions, this.colors.grid, this.colors.grid);
+    this.grid = new THREE.GridHelper(size, divisions, this.colors.grid, this.colors.grid);
 
     this.grid.position.set(0, 0, 0);
     this.grid.material.opacity = 0;
@@ -163,10 +149,10 @@ class App {
   }
 
   addFloor() {
-    const geometry = new PlaneBufferGeometry(20, 20);
-    const material = new MeshStandardMaterial({ color: this.colors.floor, side: DoubleSide });
+    const geometry = new THREE.PlaneGeometry(20, 20);
+    const material = new THREE.MeshStandardMaterial({ color: this.colors.floor, side: THREE.DoubleSide });
 
-    this.floor = new Mesh(geometry, material);
+    this.floor = new THREE.Mesh(geometry, material);
     this.floor.position.y = 0;
     this.floor.position.z = 0;
     this.floor.rotateX(Math.PI / 2);
@@ -184,8 +170,8 @@ class App {
 
   addSphere({ x, y, z }) {
     const radius = 1, width = 32, height = 32;
-    const geometry = new SphereBufferGeometry(radius, width, height);
-    const mesh = new Mesh(geometry, this.meshes.sphereMaterial);
+    const geometry = new THREE.SphereGeometry(radius, width, height);
+    const mesh = new THREE.Mesh(geometry, this.meshes.sphereMaterial);
 
     mesh.castShadow = true;
     mesh.receiveShadow = true;
